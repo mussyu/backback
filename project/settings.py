@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3#k=ax_a&vn0zcz(nn(%1d(qmm0fph)av4ac^y8hcwo2bp-$c&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['18.222.127.15']
 
 
 # Application definition
@@ -82,11 +82,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'POST': '5432'
+        'NAME': 'db_item',
+        'USER': 'sibakyo',
+        'PASSWORD': 'sibakyo',
+        'HOST': 'localhost',
+        'POST': ''
     }
 }
 
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ja-JP'
+LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'Asia/Tokyo'
 
@@ -127,7 +127,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
 STATIC_URL = '/static/'
+STATIC_ROOT ='static'
+
+
+
+# 追加の静的ファイル探索パス
+
 
 # 管理サイトのログイン機能を通常のログイン機能として使う
 LOGIN_URL='admin:login'
